@@ -1,0 +1,69 @@
+.homebg {
+    background-color: tan;
+}
+body {
+    font-family: Baskerville, serif;
+    color: black;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Aptos Slab Black", "Aptos Slab", Georgia, serif;
+    font-weight: 900;
+}
+
+h1 + p {
+    font-style: italic;
+}
+
+header{
+    text-align: center;
+    position: relative;
+}
+.headerlinks {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    text-align: right;
+}
+
+.headerlinks h3 {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.headerlinks a {
+    color: darkblue;
+    text-decoration: none;
+}
+
+.headerlinks a:hover {
+    text-decoration: underline;
+}
+
+.divider {
+    margin: 0 8px;
+    color: #333;
+}
+
+.tableau-section {
+    text-align: center;
+}
+
+.tableauPlaceholder {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+#vid {
+    text-align: center;
+}
+
+#vid + iframe {
+    display: block;
+    margin: 0 auto;
+}

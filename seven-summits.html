@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mountain Climber and the Seven Summits</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700;800&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/seven-summits.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="game-header">
+      <h1>Mountain Climber and the Seven Summits</h1>
+      <p>Survive every summit in order of height. Miss twice in a row on one mountain and your expedition resets.</p>
+    </header>
+
+    <section class="game-stage-wrap">
+      <div class="canvas-wrap">
+        <div class="canvas-corner-ui" aria-live="polite">
+          <p id="mountainBadge" class="mountain-badge">Mount Kosciuszko - 2,228 m</p>
+          <button id="exitGameBtn" class="exit-btn" type="button">Exit Game</button>
+        </div>
+        <canvas id="gameCanvas" width="760" height="540" aria-label="Mountain Climber game canvas"></canvas>
+      </div>
+
+      <aside class="hud-panel">
+        <div class="hud-card">
+          <h2>Climber</h2>
+          <p id="avatarText">Not selected</p>
+        </div>
+
+        <div class="hud-card">
+          <h2>Level</h2>
+          <p id="levelText">-</p>
+          <p id="animalText">-</p>
+        </div>
+
+        <div class="hud-card">
+          <h2>Altitude</h2>
+          <p id="altitudeText">0 m</p>
+          <div class="progress-track" aria-hidden="true">
+            <div id="altitudeFill" class="progress-fill"></div>
+          </div>
+        </div>
+
+        <div class="hud-card">
+          <h2>Water</h2>
+          <div class="water-meter" aria-hidden="true">
+            <div id="waterFill" class="water-fill"></div>
+          </div>
+          <p id="waterText">100%</p>
+        </div>
+
+        <div class="hud-card stars-card">
+          <h2>Expedition Progress</h2>
+          <div id="starsList" class="stars-list"></div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="menuOverlay" class="overlay active" aria-live="polite">
+      <div class="overlay-card">
+        <h2>Choose Your Avatar</h2>
+        <p class="subtitle">Pick your climber, review controls, and begin the expedition.</p>
+
+        <div class="avatar-options" role="radiogroup" aria-label="Choose avatar">
+          <button type="button" class="avatar-btn" data-avatar="male" aria-pressed="false">
+            <img class="avatar-preview-image" src="assets/img/male mountain climber.png" alt="" aria-hidden="true">
+            <span class="avatar-label">Male Climber</span>
+          </button>
+          <button type="button" class="avatar-btn" data-avatar="female" aria-pressed="false">
+            <img class="avatar-preview-image" src="assets/img/female mountain climber.png" alt="" aria-hidden="true">
+            <span class="avatar-label">Female Climber</span>
+          </button>
+        </div>
+
+        <div class="controls-box">
+          <h3>Controls</h3>
+          <ul>
+            <li><strong>Left / Right Arrow Keys:</strong> Move side to side</li>
+            <li><strong>Space Bar:</strong> Jump to clear danger</li>
+            <li><strong>Goal:</strong> Reach each summit without getting dehydrated</li>
+          </ul>
+        </div>
+
+        <div class="menu-actions">
+          <button id="startBtn" class="primary-btn" type="button" disabled>Start Climb</button>
+          <a class="secondary-btn" href="scratch.html">Back to Home</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="messageOverlay" class="overlay" aria-live="polite">
+      <div class="overlay-card compact">
+        <h2 id="messageTitle">Level Complete</h2>
+        <p id="messageBody"></p>
+        <button id="messageBtn" class="primary-btn" type="button">Continue</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/seven-summits.js"></script>
+</body>
+</html>
